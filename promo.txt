@@ -1,1 +1,7 @@
+#promo0.jpg
+#promo1.jpg
+#promo2.jpg
+#promo3.jpg
+#promo4.jpg
+#promog.jpg
 promot.jpg
