@@ -1,133 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Promoción del Día</title>
+  <title>Promoción del Día</title>
 
-<style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-*{
-    box-sizing:border-box;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 20px;
+      background: radial-gradient(
+        circle at top,
+        #193300 0%,
+        #080d05 35%,
+        #000 80%
+      );
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      text-align: center;
+    }
 
-body{
-    margin:0;
-    min-height:100vh;
-    padding:20px;
-    background:radial-gradient(circle at top,#193300 0%,#080d05 35%,#000 80%);
-    font-family:Arial,Helvetica,sans-serif;
-    color:white;
-    text-align:center;
-}
+    .container {
+      max-width: 750px;
+      margin: auto;
+    }
 
-.container{
-    max-width:750px;
-    margin:auto;
-}
-
-.logo{
-    font-size:42px;
-    color:#6aff00;
-    text-shadow:
+    .logo {
+      font-size: 42px;
+      color: #6aff00;
+      text-shadow:
         0 0 10px #6aff00,
         0 0 25px #3cff00;
-}
+    }
 
-h1{
-    margin:10px 0;
-    font-size:30px;
-}
+    h1 {
+      margin: 10px 0;
+      font-size: 30px;
+    }
 
-.subtitle{
-    color:#d0d0d0;
-    margin-bottom:25px;
-}
+    .subtitle {
+      color: #d0d0d0;
+      margin-bottom: 25px;
+    }
 
-.promo-box{
+    .promo-box {
+      padding: 8px;
+      border: 2px solid #6aff00;
+      border-radius: 18px;
+      background: #111;
+      box-shadow:
+        0 0 15px rgba(106, 255, 0, 0.8),
+        0 0 30px rgba(106, 255, 0, 0.35);
+    }
 
-    padding:8px;
-    border:2px solid #6aff00;
-    border-radius:18px;
+    #promo {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
 
-    background:#111;
+    .footer {
+      margin-top: 25px;
+      color: #bfbfbf;
+      line-height: 1.5;
+    }
 
-    box-shadow:
-        0 0 15px rgba(106,255,0,.8),
-        0 0 30px rgba(106,255,0,.35);
+    .footer strong {
+      color: #6aff00;
+    }
 
-}
-
-#promo{
-    width:100%;
-    border-radius:12px;
-    display:block;
-}
-
-.footer{
-    margin-top:25px;
-    color:#bfbfbf;
-    line-height:1.5;
-}
-
-.footer strong{
-    color:#6aff00;
-}
-
-</style>
-
+    #mensaje {
+      padding: 30px;
+      color: #cccccc;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<div class="logo">⚡</div>
+    <div class="logo">⚡</div>
 
-<h1>🔥 PROMOCIÓN DEL DÍA 🔥</h1>
+    <h1>🔥 PROMOCIÓN DEL DÍA 🔥</h1>
 
-<p class="subtitle">
-Acerca tu teléfono al llavero NFC para ver la promoción del día.
-</p>
+    <p class="subtitle">
+      Acerca tu teléfono al llavero NFC para ver la promoción del día.
+    </p>
 
-<div class="promo-box">
+    <div class="promo-box">
+      <div id="mensaje">Cargando promoción...</div>
 
-<img id="promo" src="" alt="Promoción">
+      <img
+        id="promo"
+        src=""
+        alt="Promoción del día"
+        style="display:none;"
+      >
+    </div>
 
-</div>
+    <div class="footer">
+      <strong>¡Nuevas promociones regularmente!</strong><br>
+      ¡Vuelve a escanear pronto!
+    </div>
 
-<div class="footer">
+  </div>
 
-<strong>¡Nuevas promociones regularmente!</strong>
+  <script>
+    async function cargarPromocion() {
+      const promo = document.getElementById("promo");
+      const mensaje = document.getElementById("mensaje");
 
-<br>
+      try {
+        const respuesta = await fetch(
+          "promo.txt?v=" + new Date().getTime(),
+          { cache: "no-store" }
+        );
 
-¡Vuelve a escanear pronto!
+        if (!respuesta.ok) {
+          throw new Error("No se pudo leer promo.txt");
+        }
 
-</div>
+        const nombreImagen = (await respuesta.text()).trim();
 
-</div>
+        if (!nombreImagen) {
+          throw new Error("promo.txt está vacío");
+        }
 
-<script>
+        promo.src =
+          nombreImagen + "?v=" + new Date().getTime();
 
-/* =====================================================
-   SOLO CAMBIA ESTA LÍNEA
-===================================================== */
+        promo.onload = function () {
+          mensaje.style.display = "none";
+          promo.style.display = "block";
+        };
 
-const promocion = "promo3.jpg";
+        promo.onerror = function () {
+          mensaje.textContent =
+            "No se encontró la imagen: " + nombreImagen;
+        };
 
-/* ===================================================== */
+      } catch (error) {
+        mensaje.textContent =
+          "No se pudo cargar la promoción. Intenta actualizar la página.";
+        console.error(error);
+      }
+    }
 
-document.getElementById("promo").src =
-promocion + "?v=" + new Date().getTime();
-
-</script>
+    cargarPromocion();
+  </script>
 
 </body>
 </html>
