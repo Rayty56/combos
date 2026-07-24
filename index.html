@@ -1,116 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Today's Deal</title>
+<title>Promoción del Día</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      padding: 20px 12px 35px;
-      background:
-        radial-gradient(circle at top, #193300 0%, #080d05 35%, #000000 75%);
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-    }
+*{
+    box-sizing:border-box;
+}
 
-    .container {
-      width: 100%;
-      max-width: 720px;
-      margin: auto;
-    }
+body{
+    margin:0;
+    min-height:100vh;
+    padding:20px;
+    background:radial-gradient(circle at top,#193300 0%,#080d05 35%,#000 80%);
+    font-family:Arial,Helvetica,sans-serif;
+    color:white;
+    text-align:center;
+}
 
-    .logo {
-      margin: 5px 0;
-      color: #78ff00;
-      font-size: 42px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-shadow:
-        0 0 8px #54ff00,
-        0 0 20px #32a800;
-    }
+.container{
+    max-width:750px;
+    margin:auto;
+}
 
-    h1 {
-      margin: 10px 0 5px;
-      font-size: 30px;
-    }
+.logo{
+    font-size:42px;
+    color:#6aff00;
+    text-shadow:
+        0 0 10px #6aff00,
+        0 0 25px #3cff00;
+}
 
-    .subtitle {
-      margin: 0 0 22px;
-      color: #cccccc;
-      font-size: 16px;
-    }
+h1{
+    margin:10px 0;
+    font-size:30px;
+}
 
-    .promo-box {
-      padding: 7px;
-      border: 2px solid #67ff00;
-      border-radius: 20px;
-      background: #080808;
-      box-shadow:
-        0 0 12px rgba(103, 255, 0, 0.8),
-        0 0 30px rgba(103, 255, 0, 0.35);
-    }
+.subtitle{
+    color:#d0d0d0;
+    margin-bottom:25px;
+}
 
-    #promo {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-    }
+.promo-box{
 
-    .footer {
-      margin-top: 25px;
-      color: #bbbbbb;
-      font-size: 15px;
-      line-height: 1.5;
-    }
+    padding:8px;
+    border:2px solid #6aff00;
+    border-radius:18px;
 
-    .footer strong {
-      color: #78ff00;
-    }
-  </style>
+    background:#111;
+
+    box-shadow:
+        0 0 15px rgba(106,255,0,.8),
+        0 0 30px rgba(106,255,0,.35);
+
+}
+
+#promo{
+    width:100%;
+    border-radius:12px;
+    display:block;
+}
+
+.footer{
+    margin-top:25px;
+    color:#bfbfbf;
+    line-height:1.5;
+}
+
+.footer strong{
+    color:#6aff00;
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <main class="container">
+<div class="container">
 
-    <div class="logo">⚡</div>
+<div class="logo">⚡</div>
 
-    <h1>🔥 PROMOCIÓN DEL DÍA 🔥</h1>
+<h1>🔥 PROMOCIÓN DEL DÍA 🔥</h1>
 
 <p class="subtitle">
-  Acerca tu llavero NFC para ver la promoción más reciente.
+Acerca tu teléfono al llavero NFC para ver la promoción del día.
 </p>
 
-    <div class="promo-box">
-      <img id="promo" src="promo.jpg" alt="Today's promotion">
-    </div>
+<div class="promo-box">
 
-   <div class="footer">
-  <strong>¡Nuevas promociones regularmente!</strong><br>
-  ¡Vuelve a escanear pronto!
+<img id="promo" src="" alt="Promoción">
+
 </div>
 
-  </main>
+<div class="footer">
 
-  <script>
-    /*
-      Adds a unique number to the image address so the phone
-      displays the newest promotion instead of an older cached image.
-    */
-    document.getElementById("promo").src =
-      "promo.jpg?v=" + new Date().getTime();
-  </script>
+<strong>¡Nuevas promociones regularmente!</strong>
+
+<br>
+
+¡Vuelve a escanear pronto!
+
+</div>
+
+</div>
+
+<script>
+
+/* =====================================================
+   SOLO CAMBIA ESTA LÍNEA
+===================================================== */
+
+const promocion = "promo1.jpg";
+
+/* ===================================================== */
+
+document.getElementById("promo").src =
+promocion + "?v=" + new Date().getTime();
+
+</script>
 
 </body>
 </html>
