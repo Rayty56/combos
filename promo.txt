@@ -1,10 +1,9 @@
 promot.jpg
 
 
-#promo0.jpg --
-#promo1.jpg
-#promo2.jpg
-#promo3.jpg
-#promo4.jpg
-#promog.jpg
-#promot.jpg
+#promo0.jpg -- NO HAY PROMOCION--
+#promo1.jpg  -- COCA + OREO POR $3 --
+#promo2.jpg   -- MONSTER + GATO + AGUA  POR $6 --
+#promo3.jpg  -- MONSTER + AGUA GRATIS  $4 -- 
+#promog.jpg  -- AGUA GRATIS  --
+#promot.jpg  -- MONSTER, 2 AGUAS, OREO, COCA Y GATO POR $10 --
