@@ -5,5 +5,12 @@ promo0.jpg
 #promo1.jpg  -- COCA + OREO POR $3 --
 #promo2.jpg   -- MONSTER + GATO + AGUA  POR $6 --
 #promo3.jpg  -- MONSTER + AGUA GRATIS  $4 -- 
+#promo4.jpg -- PEPSI + GANSITO  $3--
+#promo5.jpg -- GATORADE + PEPSI + GANSITO FREE $4 --
+#promo6.jpg -- SPARKLING WATER CON SAL Y LIMON $2 --
+#promo7.jpg -- GATORADE + GANSITO  $3 --
+#promo8.jpg -- MONSTER A $3 --
+#promo9.jpg -- MONSTER + GATORADE  $5 --
+#promo10.jpg -- GANSITO POR $1.50 --
 #promog.jpg  -- AGUA GRATIS  --
 #promot.jpg  -- MONSTER, 2 AGUAS, OREO, COCA Y GATO POR $10 --
