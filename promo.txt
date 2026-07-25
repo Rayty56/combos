@@ -14,3 +14,4 @@ promo0.jpg
 #promo10.jpg -- GANSITO POR $1.50 --
 #promog.jpg  -- AGUA GRATIS  --
 #promot.jpg  -- MONSTER, 2 AGUAS, OREO, COCA Y GATO POR $10 --
+#paga.jpg  -- SE BUSCA GERRY--
