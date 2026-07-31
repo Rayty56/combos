@@ -12,6 +12,11 @@ promo11.jpg
 #promo8.jpg -- MONSTER A $3 --
 #promo9.jpg -- MONSTER + GATORADE  $5 --
 #promo10.jpg -- GANSITO POR $1.50 --
+#promo11.jpg -- GATOPOWER + SPARKLING WATER  $3 --
+#promo12.jpg -- GANSITO GRATIS --
+#promo13.jpg -- CUALQUIER BEBIDA + GNASITO GRATIS --
+#promo14.jpg -- PEPSI + CUALQUIER PANESITO  $3 --
+#promo15.jpg -- VIP, MONSTER GATOPOWER, PEPSI, SPARKLING WATER GANSITO MANTECADAS $9 --
 #promog.jpg  -- AGUA GRATIS  --
 #promot.jpg  -- MONSTER, 2 AGUAS, OREO, COCA Y GATO POR $10 --
 #paga.jpg  -- SE BUSCA GERRY--
